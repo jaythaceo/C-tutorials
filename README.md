@@ -1,2 +1,2 @@
-A large collection of C++ tutorials
+A large collection of C & C++ tutorials
 and examples... 
