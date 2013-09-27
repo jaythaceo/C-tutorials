@@ -21,6 +21,10 @@ int main(int argc, char const *argv[])
 	"the second number is " << second_num << 
 	"the sum of the numbers" << total << endl;
 
+	// for windows users having problem
+	// with terminal window closing 
+	// just remove comment chars
+	/* system("PAUSE"); */
 	
 	return 0;
 }

@@ -22,6 +22,10 @@ int main(int argc, const char * argv[])
   cout << "Average: " << ave << endl;  // printing out average 
     
     
+    // for windows users having problem
+	// with terminal window closing 
+	// just remove comment chars
+	/* system("PAUSE"); */
   return 0;
 }
 

@@ -20,6 +20,10 @@ int main(int argc, char const *argv[])
 	cout << "The variable two = " << two << endl;
 	cout << "The constant variable = " << x << endl;
 
+	// for windows users having problem
+	// with terminal window closing 
+	// just remove comment chars
+	/* system("PAUSE"); */
 
 	return 0;
 }
