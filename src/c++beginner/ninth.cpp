@@ -54,7 +54,7 @@ int minimum(int grades[][exam], int pupils, int tests)
 		
 	return lowGrade;
 }
-
+// Find the highGrade
 int minimum(int grades[][exam], int pupils, int tests)
 {
 	int highGrade = 100;
