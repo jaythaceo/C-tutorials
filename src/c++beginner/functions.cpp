@@ -6,18 +6,17 @@ using namespace std;
 
 
 int add(int x, int y){
-	return x + y;
+  return x + y;
 }
 
 int main(int argc, char const *argv[])
 {
 
-	int number = 10;
-	int number1 = 30;
+  int number = 10;
+  int number1 = 30;
 
-	cout << "The two integers added are " << add(number, number1) << endl;
+  cout << "The two integers added are " << add(number, number1) << endl;
 
 
-	
-	return 0;
+  return 0;
 }
