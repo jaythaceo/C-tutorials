@@ -6,8 +6,6 @@
 *
 ******************/
 
-
-
 #include <iostream>
 #include <iomanip>
 #include "salesp.h"
@@ -42,7 +40,7 @@ void SalesPerson::setSales(int month, double amount)
 		sales[month - 1] = amount;
 	else
 		cout << "Invalid month or sales figure" << endl;
-	
+
 }
 
 //Print the total annual sales
@@ -61,7 +59,7 @@ double SalesPerson::totalAnnualSales()
 
 	for (int i = 0; i < 12; ++i)
 		total += sales[i];
-	
+
 	return total;
 }
 

@@ -22,7 +22,7 @@ int main(int argc, char const *argv[])
   return 0;
 }
 
-void printArray(int a[][3]){
+void printArray(int a[][3]) {
   for (int i = 0; i < 2; i++)
   {
     for (int j = 0; j < 3; j++)
