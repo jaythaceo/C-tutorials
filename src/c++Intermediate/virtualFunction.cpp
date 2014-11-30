@@ -17,7 +17,6 @@ public:
 
   virtual double area()
   {return 0;}
-
 };
 
 class Rectangle: public Shape {
