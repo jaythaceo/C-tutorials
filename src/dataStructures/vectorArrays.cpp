@@ -11,7 +11,7 @@ int main(int argc, const char *argv[])
 {
     vector<double> saleries;
     bool more = true;
-    
+
     while(more) {
 
         double s;
@@ -25,11 +25,11 @@ int main(int argc, const char *argv[])
 
     double highest = saleries[0];
     int i;
-    
+
     for(i = 1; i < saleries.size(); i++)
         if(saleries[i] > highest)
             highest = saleries[i];
-    
+
     for (i = 0; i < saleries.size(); i++) {
         if(saleries[i] == highest)
             cout << "highest value => ";
