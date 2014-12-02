@@ -38,7 +38,7 @@ bool Account::deposit(double amt) {
     // Process the transaction
     balance -= amt;
     numOfTrans++;
-    
+
     if(numOfTrans == maxTrans) {
         if(!resizeLedger()) {
             cerr << "Out of memory" << endl;
@@ -55,5 +55,38 @@ bool Account::deposit(double amt) {
 }
 
 Transaction Account::getTransactionByNum(int i) const {
+    Transaction empty;
+
+    if(i >= 1 && i <= numOfTrans)
+        return allTransactions[i-1];
+    else
+        return empty;
 
 }
+
+
+bool Account::resizeTransLedger() {
+    Transaction* temp;
+
+    // Create temp array
+    temp = new Transaction[2 * maxTrans];
+
+    // If out of memory stop
+    if(temp == NULL) return false;
+
+    //Copy old transactions to new list
+    for(int i = 0; i < numOfTrans; i++) {
+        temp[i] = allTransactions[i];
+
+    }
+
+    // Deallocate all memory
+    delete [] allTransactions;
+
+    allTransactions = temp;
+
+    return true;
+
+}
+
+
