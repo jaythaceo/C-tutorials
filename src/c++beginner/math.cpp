@@ -17,9 +17,9 @@ int main(int argc, char const *argv[])
   total = first_num + second_num;
 
   // printing to the screen
-  cout << "The first number is " << first_num <<
-  " the second number is " << second_num <<
-  " the sum of the numbers" << total << endl;
+  cout << "The first number is " << first_num << endl;
+  cout << "The second number is " << second_num << endl;
+  cout << "The sum of the two numbers " << total << endl;
 
   // for windows users having problem
   // with terminal window closing
