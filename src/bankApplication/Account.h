@@ -1,5 +1,5 @@
 
-#ifndef ACCOUNT_H   
+#ifndef ACCOUNT_H
 #define ACCOUNT_H
 
 #include "Transaction.h"
@@ -11,11 +11,11 @@ using namespace std;
 class Account {
 
     public:
-        Account(const std:string& name="", int acct = 0, double bal = 0) {
+        Account(const std::string& name="", int acct = 0, double bal = 0) {
             accountHolder = name;
-            acountNumber = acct;
+            accountNumber = acct;
             balance = bal;
-            numberOfTrans = 0;
+            numOfTrans = 0;
             maxTrans = 10;
             allTransactions = new Transaction[maxTrans];
 
@@ -43,7 +43,7 @@ class Account {
 
         // Setters
         void setAccountHolder(const string& name) {
-            accountholder = name;
+            accountHolder = name;
         }
 
         // Account interface
@@ -52,7 +52,7 @@ class Account {
         bool deposit(double amount);
 
         // Transaction interface
-        Transaction getTranactionByNum(int i) const;
+        Transaction getTransactionByNum(int i) const;
 
         // Security
         bool validateLogin(int accNum, const string& pass) const;

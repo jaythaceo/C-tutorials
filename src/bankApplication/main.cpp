@@ -24,7 +24,7 @@ int login(Account[], int);
 int main(int argc, const char *argv[])
 {
 
-    Accout Checking("Jason Brooks", 550000, 1122);
+    Account Checking("Jason Brooks", 550000, 1122);
     char selection;
 
     // Set all output to have 2 decimal places
@@ -79,11 +79,11 @@ void showMenu() {
     cout << "C) Make a withdrawal\n";
     cout << "D) Show all transactions\n";
     cout << "E) Exit and Logout\n";
-    cout << "Please make your choice: "
+    cout << "Please make your choice: ";
 }
 
 
-void makeDeposit(Accout& acct) {
+void makeDeposit(Account& acct) {
     double amount;
 
     cout << "Please enter amount for deposit: $";
@@ -96,7 +96,58 @@ void makeDeposit(Accout& acct) {
 
 }
 
+void makeWithDrawal(Account& acct) {
+    double amount;
 
+    cout << "Please enter amount to withdraw: $";
+    cin >> amount;
+
+    if(acct.withdraw(amount))
+        cout << "withdrawal made succesfully" << endl;
+    else
+        cout << "withdrawal error contact branch" << endl;
+
+}
+
+void showBalance(const Account& acct) {
+    cout << "Account: " << acct.getAccountNum() << endl;
+    cout << "Your current balance is: $";
+    cout << acct.getBalance() << endl;
+}
+
+void showAllTrans(const Account& acct) {
+    string transType;
+    Transaction currentTrans;
+
+    cout << "Transaction Ledger" << endl;
+    cout << "Account Name: " << acct.getName() << endl;
+    cout << "Account Number: " << acct.getAccountNum() << endl;
+
+    // Process each transaction one at a time
+    for(int i = 1; i <= acct.getNumOfTrans(); i++) {
+
+        currentTrans = acct.getTransactionByNum(i);
+
+        cout << currentTrans.getTransID() << " ";
+
+        switch(currentTrans.getTransID()) {
+            case 0:
+                transType = "Withdrawal";
+                break;
+            case 1:
+                transType = "Deposit";
+                break;
+            default:
+                transType = "Unknown";
+                break;
+
+        };
+
+        cout << transType << " ";
+        cout << currentTrans.getTransAmt() << endl;
+
+    }
+}
 
 
 

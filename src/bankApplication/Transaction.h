@@ -13,7 +13,7 @@ class Transaction {
 
         // Getters
         int getTransID() {
-            return TransactionID;
+            return transactionID;
         }
 
         int getTransType() {
