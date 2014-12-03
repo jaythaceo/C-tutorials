@@ -19,5 +19,11 @@ int main(int argc, char const *argv[])
   // just remove comment chars
   /* system("PAUSE"); */
 
+  // assigning a variable
+  int variable = 10;
+
+  cout << variable << endl;
+
+
   return 0;
 }
