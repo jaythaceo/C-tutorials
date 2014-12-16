@@ -36,7 +36,7 @@ class BinaryTree{
         void in_order_recursion(BinaryTreeNode<Data> * current_node);
         void post_order(void (*visit_fun)(BinaryTreeNode<Data> *));
         void post_order_recursion(BinaryTreeNode<Data> * current_node);
-        void level_order (*visit_fun)(BinaryTreeNode<Data> *));
+        void level_order (void (*visit_fun)(BinaryTreeNode<Data> *));
         void level_order_recursion(BinaryTreeNode<Data> * current_node, queue<BinaryTreeNode<Data> *> &q);
         void spiral_level_order(void (*visit_fun)(BinaryTreeNode<Data> *));
 
@@ -49,6 +49,37 @@ void BinaryTree<Data>::level_order(void(*visit_fun)(BinaryTreeNode<Data> *)) {
     this->visit = visit_fun;
     queue<BinaryTreeNode<Data> *> q;
     level_order_recursion(root, q);
+}
+
+
+template <class Data>
+void BinaryTree<Data>::spiral_level_order(void(*visit_fun)(BinaryTreeNode<Data> *)) {
+    Tracer t("level_order", cout);
+    this->visit = visit_fun;
+    queue<BinaryTreeNode<Data> *> q;
+    level_order_recursion(root, q);
+}
+
+template <class Data>
+void BinaryTree<Data>::level_order_recursion(BinaryTreeNode<Data> * current_node, queue<BinaryTreeNode<Data> *> &q) {
+    visit(current_node);
+
+    if (current_node->left != NULL)
+        q.push(current_node->left);
+    if (current_node->right != NULL)
+        q.push(current_node->right);
+    if (!q.empty()) {
+        BinaryTreeNode<Data> * temp = q.front();
+        q.pop();
+        level_order_recursion(temp, q);
+    }
+}
+
+template <class Data>
+void BinaryTree<Data>::in_order_recursion(void(*visit_fun)(BinaryTreeNode<Data> *)) {
+    Tracer t("in_order(visit)", cout);
+    this->visit = visit_fun;
+    in_order_recursion(root);
 }
 
 
