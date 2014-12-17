@@ -82,4 +82,24 @@ void BinaryTree<Data>::in_order_recursion(void(*visit_fun)(BinaryTreeNode<Data> 
     in_order_recursion(root);
 }
 
+template <class Data>
+void BinaryTree<Data>::in_order_recursion(BinaryTreeNode<Data> * current_node) {
+    if (current_node->left != NULL)
+        pre_order_recursion(current_node->left);
+
+    visit(current_node);
+
+    if (current_node->right != NULL)
+        pre_order_recursion(current_node-right);
+
+}
+
+
+template <class Data>
+void BinaryTree<Data>::pre_order(void (*visit_fun)(BinaryTreeNode<Data> * current_node) {
+    Tracer r("per_order(visit)", cout);
+    this->visit = visit_fun;
+    pre_order_recursion(root);
+
+}
 
