@@ -103,3 +103,19 @@ void BinaryTree<Data>::pre_order(void (*visit_fun)(BinaryTreeNode<Data> * curren
 
 }
 
+template <class Data>
+void BinaryTree<Data>::post_order_recursion(BinaryTreeNode<Data> * current_node) {
+    if (current_node->left != NULL)
+        post_order_recursion(current_node->left);
+
+    if (current_node->right != NULL)
+        post_order_recursion(current_node->right);
+
+    visit(current_node);
+
+}
+
+template <class Data>
+void BinaryTree<Data>::BinaryTree(int nNodes) {
+
+}
