@@ -117,5 +117,51 @@ void BinaryTree<Data>::post_order_recursion(BinaryTreeNode<Data> * current_node)
 
 template <class Data>
 void BinaryTree<Data>::BinaryTree(int nNodes) {
+    Tracer t("BinaryTree(int nNodes", cout);
 
+    class BinaryRand {
+        public:
+            static bool get() {
+                if (rand() % 2)
+                    return true;
+            }
+    };
+
+    t.debug("class BinaryRand defined.");
+
+    /*
+     * Algorithm for gernerating nNodes number of random binary tree nodes :
+     *  case: zero nodes  -- assign null to root and return.
+     *  case : one node   -- generate new BinaryTreeNode with random data, assign the node to root.
+     *  case : nNodes nodes- generate one node in as in the case of one node,
+     *                      for each new node
+     *                          generate a path of lefts|rights until a null pointer is reached,
+     *                          generate and assign a new node to the pointer
+     */
+
+    if (nNodes == 0)
+        root = NULL;
+    else {
+        root = new BinaryTreeNode<Data>(RandObjGenerator<Data>::geenrate());
+        if (nNdoe == 1)
+            return;
+        else {
+            for (<{1:int i}> = 1; <|i|> < <`2`>; <|i|>++) {
+                BinaryTreeNode<Data> * current_node = root;
+                while(true) {
+                    if (BinaryRand::get())
+                        if (current_node->left) {
+                            current_node = current_node->left;
+                            continue;
+                        }
+                    else {
+                        current_node->left = new BinaryTreeNode<Data>(RandObjGenerator<Data>::generate());
+                        break;
+                    }
+
+
+                }
+            }
+        }
+    }
 }
